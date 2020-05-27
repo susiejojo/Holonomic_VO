@@ -1,15 +1,14 @@
 clc;clear;
-agent_pos = [1 0];
-v_des = 0.6;
-agent_goal = [5 5];
-agent_rad = 0.4;
-time_sample = 0.1;
+agent_pos = [0 0];
+vmax = 0.2;
+agent_goal = [8 4];
+agent_rad = 0.3;
+time_sample = 0.4;
 iter = 1;
-v = [0.01 0.01];
+agent_velo = [0 0];
 while (norm(agent_pos-agent_goal)>0.1)
-    %v = getControls1(pa,v_tar,pc);
-    v = getControls1(agent_pos,time_sample,v_des,agent_goal);
-    agent_pos = agent_pos+v*time_sample;
+    agent_velo = getControls(agent_pos,agent_goal,vmax,time_sample);
+    agent_pos = agent_pos+agent_velo*time_sample;
     agent_pos
     F(iter) = plot_figs(agent_pos,agent_rad,agent_goal);
     basefilename = sprintf('snap%d.png',iter);

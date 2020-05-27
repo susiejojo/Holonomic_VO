@@ -1,3 +1,3 @@
-function f = cost_distance(agent_pos,agent_goal)
-    f = sqrt((agent_goal(2)-agent_pos(2))^2 + (agent_goal(1)-agent_pos(1))^2);
+function cost1 = cost_distance(controls,agent_pos,agent_goal,time_sample)
+    cost1 = norm(agent_pos+controls*time_sample-agent_goal);
 end
