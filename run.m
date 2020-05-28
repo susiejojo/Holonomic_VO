@@ -3,7 +3,7 @@ agent_pos = [0 0];
 vmax = 0.2;
 agent_goal = [8 4];
 agent_rad = 0.3;
-time_sample = 0.4;
+time_sample = 0.1;
 iter = 1;
 agent_velo = [0 0];
 while (norm(agent_pos-agent_goal)>0.1)
