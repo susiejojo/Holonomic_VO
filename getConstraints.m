@@ -3,7 +3,7 @@ function [vo,ceq] = getConstraints(agent_velo,agent_pos,sensedObstacles,agent_ra
     %sensedObstacles
     sensedobst_len = size(sensedObstacles);
     for i = 1:sensedobst_len(1)
-        dist_agent_obst = norm(sensedObstacles(i)-agent_pos)+0.01;
+        dist_agent_obst = norm(sensedObstacles(i)-agent_pos)+0.008;
         bigrad = obst_rad + agent_rad;
         if ((dist_agent_obst)< bigrad)
             dist_agent_obst = bigrad;
